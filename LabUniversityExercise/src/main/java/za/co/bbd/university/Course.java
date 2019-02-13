@@ -48,6 +48,9 @@ public class Course {
     }
 
     public boolean enrollStudent(Student newStudent) {
+        // Should fail if above the capacity
+        if (students.size() == capacity)
+            return false;
         if (students.contains(newStudent))
             return false;
         else {
