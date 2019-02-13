@@ -88,6 +88,7 @@ public class AppTest
         art.enrollStudent(ron);
         assertEquals(false, art.enrollStudent(rupert));
     }
-
+//@Aftereach
+    //Would make close connection calls
 
 }

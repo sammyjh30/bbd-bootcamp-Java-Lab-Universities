@@ -5,14 +5,16 @@ import java.util.List;
 
 public class Course {
 
+    // Make private otherwise break encapsulation
     private String name;
     private List<Student> students = new ArrayList<Student>(); // store the course’s name, such as COP3502 etc.
     private Integer capacity; //maximum number of students allowed in this class
-    private static Integer numberOfCourse; // keeps track of the number of courses that have been created so far
+    private static Integer numberOfCourse = 0; // keeps track of the number of courses that have been created so far
 
     public Course(String courseName, int cap) {
         name = courseName;
         capacity = cap;
+        numberOfCourse++;
     }
 
     public void setName(String name) {
@@ -60,6 +62,8 @@ public class Course {
     }
 
     public boolean unenrollStudent (Student oldStudent) {
+        //students.remove(oldStudent) already is a boolean, so can do:
+        // return students.remove(oldStudent);
         if (students.contains(oldStudent)) {
             students.remove(oldStudent);
             return true;
